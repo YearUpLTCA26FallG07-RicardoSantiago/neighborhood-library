@@ -16,7 +16,7 @@ public class Book {
         this.checkedOutTo = checkedOutTo;
     }
 
-    public int getId() {
+    public  int getId() {
         return id;
     }
 
@@ -40,7 +40,7 @@ public class Book {
         this.title = title;
     }
 
-    public boolean isCheckedOut() {
+    public  boolean isCheckedOut() {
         return isCheckedOut;
     }
 

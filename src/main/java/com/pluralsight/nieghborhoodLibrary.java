@@ -63,7 +63,31 @@ public class nieghborhoodLibrary {
 
                         }
                     }
-                    break;
+                    System.out.println("Would you like to check out a book?\n\n If so enter the ID#\n\n If not press 0 to return");
+                    int bookid = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if(bookid == 0) {
+                        break;
+                    }
+                    for(Book book : books) {
+                      if (books != null && book.getId() == bookid && !book.isCheckedOut())  {
+                          System.out.println(" Enter your name");
+                          String name = scanner.nextLine();
+
+                          book.setCheckedOut(true);
+                          book.setCheckedOutTo(name);
+
+                          System.out.println("\"" +book.getTitle() + "\" has been checked out to " + name);
+                          break;
+
+
+                    }}
+
+
+
+
+
             }
         }
     }
