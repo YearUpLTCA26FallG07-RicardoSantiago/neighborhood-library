@@ -84,6 +84,44 @@ public class nieghborhoodLibrary {
 
                     }}
 
+                case 2:
+                    System.out.println("Books currently checked out");
+
+                    for (Book book : books) {
+                        if(book !=null && book.isCheckedOut()) {
+                            System.out.println(book);
+                        }
+                    }
+
+                    System.out.println("If you want to check in a book press C\nOr\nPress x to go back to the home screen");
+                    String option = scanner.nextLine();
+
+                    if(option.equals("c")) {
+                        System.out.println("Please enter the book ID to check in");
+                        bookid = scanner.nextInt();
+                        scanner.nextLine();
+
+                        boolean found = false;
+
+                        for (Book book : books) {
+                            if (book != null && book.getId() == bookid && book.isCheckedOut()) {
+
+                                book.setCheckedOut(false);
+                                book.setCheckedOutTo("No one");
+
+                                System.out.println(
+                                        "\"" + book.getTitle() +
+                                                "\" has been checked in.");
+                            }
+
+                        }
+                    }
+
+
+                    break;
+
+
+
 
 
 
